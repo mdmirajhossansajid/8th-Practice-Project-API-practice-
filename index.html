@@ -4,8 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+                     <!-- Tailwind CSS and daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+                        <!-- font awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">   
+     <!--google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+        rel="stylesheet">
+
 </head>
-<body>
-    Hello World!
+<body class="google-sans">
+<main>
+<section class="header">
+    <div class="navbar bg-[#15803D] text-white shadow-sm px-4">
+
+        <!-- Left -->
+        <div class="navbar-start">
+            <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </div>
+
+                <ul tabindex="0"
+                    class="menu menu-sm dropdown-content bg-white text-black rounded-box z-10 mt-3 w-52 p-2 shadow">
+                    <li><a>About</a></li>
+                    <li><a>Gallery</a></li>
+                    <li><a>Plant a Tree</a></li>
+                </ul>
+            </div>
+
+            <a class="text-xl font-bold ml-2">Green Earth</a>
+        </div>
+
+        <!-- Center -->
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a>About</a></li>
+                <li><a>Gallery</a></li>
+                <li><a>Plant a Tree</a></li>
+            </ul>
+        </div>
+
+        <!-- Right -->
+        <div class="navbar-end">
+            <a class="bg-[#ffdc50] px-5 py-2 rounded-full text-[#15803D] font-semibold hover:bg-yellow-500 transition">
+                Plant a Tree
+            </a>
+        </div>
+
+    </div>
+</section>
+<section class="hero-section bg-[#c6ecd5]">
+    <div class="grid grid-cols-1 md:grid-cols-3 items-center py-16 px-2">
+        <!-- Left Image -->
+        <div class="flex justify-start">
+            <img src="assets/hero-leaf1.png" alt="">
+        </div>
+        <!-- Center Text -->
+        <div class="text-center">
+            <h1 class="text-3xl font-bold text-gray-800">
+                Plant a Tree, Grow a Future
+            </h1>
+            <p class="text-gray-600 mt-2">
+                Join our mission to plant 1 million trees and make the Earth greener for future generations.
+            </p>
+            <button class="mt-4 bg-yellow-400 px-5 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
+                Get Involved
+            </button>
+        </div>
+    
+        <!-- Right Image -->
+        <div class="flex justify-end">
+            <img src="assets/hero-leaf2.png" alt="">
+        </div>
+    
+    </div>
+</section>
+</main>
 </body>
 </html>
