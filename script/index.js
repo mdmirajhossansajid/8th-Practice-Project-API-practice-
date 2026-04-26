@@ -1,6 +1,8 @@
 const catagoriesContainer=document.getElementById("catagoriesContainer");
 const treesContainer=document.getElementById("treesContainer");
 const loadSpinner=document.getElementById("loadSpinner");
+const allTreesbtn=document.getElementById("allTreesbtn");
+const treeDetailsModal=document.getElementById("tree-details-modal");
 
 async function loadCatagories(){
     const res=await fetch("https://openapi.programming-hero.com/api/categories");
@@ -71,10 +73,10 @@ function displayTrees(trees){
         card.className="card bg-white shadow-sm";
         card.innerHTML=`
         <figure>
-                    <img class="w-full h-48 object-cover" src="${tree.image}" alt="${tree.name}" />
+                    <img class="w-full h-48 object-cover" src="${tree.image}" alt="${tree.name}" onclick="openTreeModal(${tree.id})" />
                 </figure>
                 <div class="card-body">
-                    <h2 class="card-title">${tree.name}</h2>
+                    <h2 class="card-title cursor-pointer hover:text-[#4ade80]" onclick="openTreeModal(${tree.id})">${tree.name}</h2>
                     <p class="line-clamp-2">${tree.description}</p>
                     <div class="flex justify-between mt-3 mb-3">
                             <button class="btn btn-soft btn-success rounded-[100px]">Add to Cart</button>
@@ -87,6 +89,9 @@ function displayTrees(trees){
         `
         treesContainer.appendChild(card);
     });
+}
+function openTreeModal(treeId){
+    treeDetailsModal.showModal();
 }
 loadCatagories();
 loadTrees();
