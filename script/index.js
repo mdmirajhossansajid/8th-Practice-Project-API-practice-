@@ -112,8 +112,13 @@ function displayTrees(trees){
                         <div class="font-bold">$${tree.price}</div>
                     </div>
                     <div class="card-actions justify-end">
-                        <button class="btn btn-success w-full text-[#FFFF] rounded-[100px]">Buy Now</button>
-                    </div>
+  <button 
+    class="btn btn-success w-full text-white rounded-full"
+    onclick="buyNow(${tree.id}, '${tree.name}', ${tree.price})"
+  >
+    Buy Now
+  </button>
+</div>
                 </div>
         `
         treesContainer.appendChild(card);
@@ -194,6 +199,54 @@ function updateCart() {
 
   // save to localStorage
   localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+
+let currentPurchase = null;
+
+function buyNow(id, name, price) {
+  currentPurchase = {
+    id,
+    name,
+    price,
+    quantity: 1
+  };
+
+  // modal open
+  openPaymentModal();
+
+  // payment modal-এ data show
+  document.getElementById("paymentStatus").textContent = 
+    `Paying $${price} for ${name}`;
+}
+function openPaymentModal() {
+  paymentModal.showModal();
+
+  if (currentPurchase) {
+    document.getElementById("paymentItem").textContent = currentPurchase.name;
+    document.getElementById("paymentAmount").textContent = currentPurchase.price;
+  }
+}
+function processPayment() {
+  paymentStatus.classList.remove("hidden");
+
+  if (currentPurchase) {
+    addToCart(
+      currentPurchase.id,
+      currentPurchase.name,
+      currentPurchase.price,
+      { textContent: "", disabled: false } // dummy btn
+    );
+  }
+
+  setTimeout(() => {
+    paymentStatus.textContent = "🎉 Payment Completed Successfully!";
+  }, 1000);
+
+  setTimeout(() => {
+    paymentModal.close();
+    paymentStatus.classList.add("hidden");
+  }, 2500);
 }
 
 function changeQty(id, amount) {

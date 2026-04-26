@@ -332,6 +332,13 @@
                 <input type="text" placeholder="MM/YY" class="input input-bordered w-full">
                 <input type="text" placeholder="CVC" class="input input-bordered w-full">
             </div>
+            <p class="text-center font-semibold">
+                Item: <span id="paymentItem"></span>
+            </p>
+            
+            <p class="text-center text-lg font-bold text-green-700">
+                $<span id="paymentAmount">0</span>
+            </p>
 
             <button onclick="processPayment()"
                 class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
