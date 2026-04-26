@@ -226,6 +226,61 @@ searchInput.addEventListener("input", () => {
   displayTrees(filtered);
 });
 
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+  const update = () => {
+    const target = +counter.getAttribute("data-target");
+    const current = +counter.innerText;
+
+    const increment = target / 100;
+
+    if (current < target) {
+      counter.innerText = Math.ceil(current + increment);
+      setTimeout(update, 20);
+    } else {
+      counter.innerText = target.toLocaleString() + "+";
+    }
+  };
+
+  update();
+});
+const form = document.getElementById("donationForm");
+const successMsg = document.getElementById("successMsg");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  successMsg.classList.remove("hidden");
+
+  form.reset();
+
+  setTimeout(() => {
+    successMsg.classList.add("hidden");
+  }, 3000);
+});
+const paymentModal = document.getElementById("paymentModal");
+const paymentStatus = document.getElementById("paymentStatus");
+
+function openPaymentModal() {
+  paymentModal.showModal();
+}
+
+function processPayment() {
+  paymentStatus.classList.remove("hidden");
+
+  setTimeout(() => {
+    paymentStatus.textContent = "🎉 Payment Completed Successfully!";
+  }, 1000);
+
+  setTimeout(() => {
+    paymentModal.close();
+    paymentStatus.classList.add("hidden");
+  }, 2500);
+}
+
+
 loadCatagories();
 loadTrees();
 updateCart();
+

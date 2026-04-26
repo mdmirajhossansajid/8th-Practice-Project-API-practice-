@@ -242,7 +242,116 @@
     </div>
 
 </section>
+<!-- ===== Our Impact (Pro) ===== -->
+<section class="bg-gradient-to-b from-green-100 to-green-200 py-16">
 
+    <div class="w-11/12 max-w-6xl mx-auto text-center">
+
+        <h2 class="text-2xl md:text-3xl font-bold text-green-800 mb-12">
+            Our Impact
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Card -->
+            <div class="impact-card">
+                <h3 class="counter text-3xl font-bold text-green-700" data-target="500000">0</h3>
+                <p class="text-gray-500 mt-2">Trees Planted</p>
+            </div>
+
+            <div class="impact-card">
+                <h3 class="counter text-3xl font-bold text-green-700" data-target="120">0</h3>
+                <p class="text-gray-500 mt-2">Communities Involved</p>
+            </div>
+
+            <div class="impact-card">
+                <h3 class="counter text-3xl font-bold text-green-700" data-target="30">0</h3>
+                <p class="text-gray-500 mt-2">Countries Reached</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ===== Plant a Tree ===== -->
+<section class="bg-[#14532d] py-20">
+
+    <div class="w-11/12 max-w-md mx-auto text-center">
+
+        <h2 class="text-white text-xl md:text-2xl font-bold mb-8">
+            Plant a Tree Today 🌱
+        </h2>
+
+        <form id="donationForm" class="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-xl space-y-4">
+
+            <input type="text" placeholder="Your Name" required class="input input-bordered w-full">
+
+            <input type="email" placeholder="Your Email Address" required class="input input-bordered w-full">
+
+            <select required class="select select-bordered w-full">
+                <option disabled selected value="">Number of Trees</option>
+                <option>1 Tree</option>
+                <option>5 Trees</option>
+                <option>10 Trees</option>
+            </select>
+
+            <button type="button" onclick="openPaymentModal()"
+                class="w-full bg-yellow-400 hover:bg-yellow-500 text-green-900 font-semibold py-2 rounded-full transition hover:scale-105">
+                Donate Now
+            </button>
+
+            <!-- Success Message -->
+            <p id="successMsg" class="text-green-300 hidden text-sm">
+                ✅ Thank you for your contribution!
+            </p>
+
+        </form>
+
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-[#0f3d26] text-center text-gray-300 text-sm py-4">
+    © 2026 Green Earth. All Rights Reserved.
+</footer>
+<dialog id="paymentModal" class="modal">
+    <div class="modal-box max-w-md">
+
+        <h3 class="text-xl font-bold mb-4 text-center">Secure Payment 💳</h3>
+
+        <div class="space-y-3">
+
+            <input type="text" placeholder="Cardholder Name" class="input input-bordered w-full">
+
+            <input type="text" placeholder="Card Number (4242 4242 4242 4242)" class="input input-bordered w-full">
+
+            <div class="grid grid-cols-2 gap-2">
+                <input type="text" placeholder="MM/YY" class="input input-bordered w-full">
+                <input type="text" placeholder="CVC" class="input input-bordered w-full">
+            </div>
+
+            <button onclick="processPayment()"
+                class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
+                Pay Now
+            </button>
+
+            <p id="paymentStatus" class="text-center text-green-600 hidden">
+                ✅ Payment Successful!
+            </p>
+
+        </div>
+
+        <div class="modal-action">
+            <form method="dialog">
+                <button class="btn">Close</button>
+            </form>
+        </div>
+
+    </div>
+</dialog>
 
 </main>
 <script src="script/index.js"></script>
