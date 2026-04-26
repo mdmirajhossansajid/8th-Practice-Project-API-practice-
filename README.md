@@ -1,101 +1,111 @@
-# 🌱 Green Earth - Tree Plantation Web Application
+<div align="center">
 
-A modern and responsive web application built using **HTML, Tailwind CSS, DaisyUI, and JavaScript**,
-where users can explore trees, add them to a cart, and simulate purchasing or donating for environmental impact 🌍.
+# 🌿 Green Earth
+### *Plant a Tree, Grow a Future*
+
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-15803D?style=for-the-badge)](https://mdmirajhossansajid.github.io/8th-Practice-Project-API-practice-/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/mdmirajhossansajid/8th-Practice-Project-API-practice-)
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+
+A modern, responsive **Tree Plantation Web Application** where users can explore trees, manage a shopping cart, simulate purchases, and contribute to environmental impact.
+
+</div>
 
 ---
 
-## 🚀 Live Demo
+## 📸 Preview
 
-🔗 https://mdmirajhossansajid.github.io/8th-Practice-Project-API-practice-/
-
----
-
-## 📦 Repository
-
-🔗 https://github.com/mdmirajhossansajid/8th-Practice-Project-API-practice-
+> 🔗 **[Click here to view live →](https://mdmirajhossansajid.github.io/8th-Practice-Project-API-practice-/)**
 
 ---
 
 ## ✨ Features
 
-### 🌳 Tree Listing & API Integration
+<table>
+<tr>
+<td width="50%">
 
-* Fetch tree data from external API
-* Display trees dynamically
-* Category-based filtering system
+### 🌳 Tree Listing & Filtering
+- Fetch tree data from live REST API
+- Dynamic rendering without page reload
+- Category-based filtering system
 
-### 🔍 Search Functionality
-
-* Real-time search by tree name
-* Instant UI update without reload
+### 🔍 Search
+- Real-time search by tree name
+- Instant UI update
 
 ### 🛒 Shopping Cart
+- Add / remove items
+- Quantity control (+ / −)
+- Auto total price calculation
+- Persistent via `localStorage`
 
-* Add to cart
-* Quantity control (+ / -)
-* Remove items
-* Auto total calculation
-* Persistent storage using `localStorage`
+</td>
+<td width="50%">
 
-### ⚡ Buy Now System
-
-* Direct purchase button
-* Opens payment modal
-* Shows selected item & price dynamically
-
-### 💳 Payment System (UI Simulation)
-
-* Card input interface
-* Payment success feedback
-* Smooth modal interaction
+### ⚡ Buy Now & 💳 Payment
+- Direct purchase button per tree
+- Payment modal with card input UI
+- Success feedback after transaction
 
 ### 🌱 Donation System
+- Tree count selection
+- Donation form submission
+- Success confirmation message
 
-* User input form
-* Tree donation selection
-* Success message after submission
+### 📊 Impact Counters
+- 500K+ Trees Planted 🌳
+- 120+ Communities 🤝
+- 30+ Countries 🌍
 
-### 📊 Impact Section
-
-* Animated counters:
-
-  * 500K+ Trees 🌳
-  * 120+ Communities 🤝
-  * 30+ Countries 🌍
+</td>
+</tr>
+</table>
 
 ### 📄 Tree Details Modal
+Click any tree card to view full details — category, description, and price in a clean modal overlay.
 
-* Click tree → see full details
-* Clean UI with category, price & description
-
-### 📱 Responsive Design
-
-* Mobile-friendly layout
-* Tablet & desktop optimized
-* Grid-based UI system
+### 📱 Fully Responsive
+Optimized for mobile, tablet, and desktop using a grid-based layout system.
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
-* HTML5
-* Tailwind CSS
-* DaisyUI
-* JavaScript (ES6)
-* REST API
-* LocalStorage
+| Layer | Technology |
+|---|---|
+| Markup | HTML5 |
+| Styling | Tailwind CSS v4 |
+| UI Components | DaisyUI v5 |
+| Icons | Font Awesome 7 |
+| Typography | Google Sans |
+| Logic | JavaScript ES6+ |
+| Data | REST API + Fetch |
+| Persistence | localStorage |
 
 ---
 
-## 🧠 Concepts Applied
+## 🧠 Key Concepts Applied
 
-* DOM Manipulation
-* Async/Await & Fetch API
-* State Management (Cart)
-* Event Handling
-* Responsive Design
-* UI/UX Design Principles
+```
+✅ Async / Await & Fetch API       ✅ DOM Manipulation
+✅ Cart State Management           ✅ Event Handling
+✅ Modal Control (<dialog>)        ✅ Responsive Design
+✅ Loading State Management        ✅ LocalStorage
+```
+
+---
+
+## 📡 API Reference
+
+Base URL: `https://openapi.programming-hero.com`
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/categories` | All tree categories |
+| GET | `/api/plants` | All trees |
+| GET | `/api/category/:id` | Trees by category |
+| GET | `/api/plant/:id` | Single tree details |
 
 ---
 
@@ -103,62 +113,68 @@ where users can explore trees, add them to a cart, and simulate purchasing or do
 
 ```bash
 📦 8th-Practice-Project-API-practice-
- ┣ 📂 assets
- ┣ 📂 script
- ┃ ┗ 📄 index.js
+ ┣ 📂 assets/
+ ┃ ┣ 🖼️ hero-leaf1.png
+ ┃ ┣ 🖼️ hero-leaf2.png
+ ┃ └ 🖼️ about.png
+ ┣ 📂 script/
+ ┃ └ 📄 index.js
  ┣ 📄 index.html
- ┣ 📄 style.css
+ └ 📄 style.css
 ```
 
 ---
 
-## ⚙️ How to Run Locally
+## ⚙️ Getting Started
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/mdmirajhossansajid/8th-Practice-Project-API-practice-.git
 
-# Open project folder
+# 2. Navigate to the project folder
 cd 8th-Practice-Project-API-practice-
 
-# Run the project
-Open index.html in your browser
+# 3. Open in browser — no build step required
 ```
+
+> ⚠️ An internet connection is required as Tailwind CSS, DaisyUI, and the tree API are loaded via CDN.
 
 ---
 
-## 🔮 Future Improvements
+## 🔮 Roadmap
 
-* 🔐 Firebase Authentication (Login System)
-* 💳 Real Payment Integration (Stripe)
-* 🧾 Order History Page
-* ❤️ Wishlist Feature
-* 🌐 Backend Integration
+- [ ] 🔐 Firebase Authentication
+- [ ] 💳 Real Payment Gateway (Stripe)
+- [ ] 🧾 Order History Page
+- [ ] ❤️ Wishlist / Favourites
+- [ ] 🌐 Backend & Database Integration
+- [ ] 🔍 Advanced Search & Sort
 
 ---
 
 ## 👨‍💻 Author
 
+<div align="center">
+
 **Md Miraj Hossan Sajid**
 
-* 🔗 GitHub: https://github.com/mdmirajhossansajid
-* 🔗 LinkedIn: https://www.linkedin.com/in/mdmirajhossansajid/
+[![GitHub](https://img.shields.io/badge/GitHub-mdmirajhossansajid-181717?style=flat-square&logo=github)](https://github.com/mdmirajhossansajid)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-mdmirajhossansajid-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/mdmirajhossansajid/)
+
+</div>
 
 ---
 
 ## 📜 License
 
-This project is open-source and available under the MIT License.
+This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
-## 🌿 Final Thought
+<div align="center">
 
-> "Plant a Tree, Grow a Future 🌱"
+*"Plant a Tree, Grow a Future 🌱"*
 
-This project represents a practical implementation of front-end development concepts with real-world features
-like API handling, cart system, and payment flow simulation.
+⭐ If you found this project helpful, consider giving it a star on GitHub!
 
----
-
- If you like this project, consider giving it a star!
+</div>
