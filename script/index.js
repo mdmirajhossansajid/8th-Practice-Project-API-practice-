@@ -3,6 +3,11 @@ const treesContainer=document.getElementById("treesContainer");
 const loadSpinner=document.getElementById("loadSpinner");
 const allTreesbtn=document.getElementById("allTreesbtn");
 const treeDetailsModal=document.getElementById("tree-details-modal");
+const modalImage = document.getElementById("modalImage");
+const modalCategory = document.getElementById("modalCategory");
+const modalDescription = document.getElementById("modalDescription");
+const modalPrice = document.getElementById("modalPrice");
+const modalTitle = document.getElementById("modalTitle");
 
 async function loadCatagories(){
     const res=await fetch("https://openapi.programming-hero.com/api/categories");
@@ -90,8 +95,18 @@ function displayTrees(trees){
         treesContainer.appendChild(card);
     });
 }
-function openTreeModal(treeId){
-    treeDetailsModal.showModal();
+async function openTreeModal(treeId){
+     const res = await fetch(
+    `https://openapi.programming-hero.com/api/plant/${treeId}`,
+  );
+  const data = await res.json();
+  const plantDetails = data.plants;
+  modalTitle.textContent = plantDetails.name;
+  modalImage.src = plantDetails.image;
+  modalCategory.textContent = plantDetails.category;
+  modalDescription.textContent = plantDetails.description;
+  modalPrice.textContent = plantDetails.price;
+  treeDetailsModal.showModal();
 }
 loadCatagories();
 loadTrees();
